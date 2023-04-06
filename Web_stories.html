@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Satirical Stories About Famous People</title>
+	<style>
+		/* Your CSS styles here */
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Satirical Stories About Famous People</h1>
+	</header>
+	
+	<main>
+		<article>
+			<header>
+				<h2>Breaking News: Kim Kardashian Runs for President</h2>
+				<p class="meta">Published on <span>April 1, 2023</span> by <span>Satire News Network</span></p>
+			</header>
+			<p class="summary">In a shocking turn of events, Kim Kardashian announced today that she will be running for President in the 2024 US elections. Speaking at a press conference in Los Angeles, the reality TV star-turned-entrepreneur stated that she was tired of the same old politicians making empty promises and that it was time for a change. "I'm just like any other American. I care about the same issues that you do. And I'm not afraid to speak my mind," Kardashian said, as she was cheered on by her fans. <a href="#" onclick="toggleContent()">Read more</a></p>
+			<p class="hidden">Kardashian, who is known for her fashion and beauty empire, as well as her appearances on reality shows such as "Keeping Up with the Kardashians", did not elaborate on her policy positions or how she plans to address the challenges facing the country. However, she did hint that she would be focusing on issues such as social justice, education, and economic opportunity. "I want to make sure that every American has a fair shot at success, no matter where they come from or what they look like," Kardashian said. Her announcement was met with mixed reactions from the political establishment, with some dismissing it as a publicity stunt and others expressing concern about the impact of celebrity culture on American politics. Only time will tell whether Kardashian's presidential bid will be successful, but one thing is certain - it will be a wild ride.</p>
+		</article>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 - Satire News Network</p>
+	</footer>
+
+	<script>
+		// JavaScript function to toggle visibility of full article content
+		function toggleContent() {
+			var summary = document.querySelector('.summary');
+			var link = summary.querySelector('a');
+			var content = summary.innerHTML;
+			summary.innerHTML = content.slice(0, content.indexOf('<a')) + '<span class="hidden">' + content.slice(content.indexOf('<a')) + '</span>';
+			var hiddenContent = summary.querySelector('.hidden');
+			hiddenContent.style.display = 'none';
+			link.addEventListener('click', function(event) {
+				event.preventDefault();
+				hiddenContent.style.display = 'block';
+				link.style.display = 'none';
+			});
+		}
+	</script>
+</body>
+</html>
